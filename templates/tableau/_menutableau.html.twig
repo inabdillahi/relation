@@ -1,0 +1,66 @@
+<div class="property_dashboard_navbar">
+  <div class="dash_user_avater">
+    {# <img src="{{ asset('assets/img/' ~ app.user.photo) }}" width="60px" class="img-fluid avater d-none d-lg-inline" alt="" /> #}
+    <span class="font--medium small d-block">Bonjour</span>
+    <h4>{{ app.user.nom }}</h4>
+    <span class="font--medium small d-block">Vous etes un {{ app.user.fonction }}</span>
+  </div>
+
+  <div class="d-block d-lg-none p-4">
+    <a class="btn btn-sm btn-secondary d-block" href="#account-menu" data-bs-toggle="collapse"><i class="ci-menu me-2"></i>Menu</a>
+  </div>
+
+  <div class="d-lg-block collapse" id="account-menu">
+    <div class="dash_user_menues">
+      <ul>
+        <li class="{% if titre is defined and titre == 'tableau' %}{% endif %}">
+          <a href="{{ path('tableau') }}"><i class="fa fa-tachometer-alt"></i>Tableau de bord</a>
+        </li>
+        {% if is_granted('ROLE_ADMIN') %}
+          <li class="{% if titre is defined and titre == 'client' %}{% endif %}">
+            <a href="{{ path('g-client') }}"><i class="fa fa-user-tie"></i>Gestions des clients</a>
+          </li>
+          <li>
+            <a href=""><i class="fa fa-bookmark"></i>Gestions des Fournisseurs</a>
+          </li>
+          <li>
+            <a href=""><i class="fa fa-bookmark"></i>Gestions des Commandes</a>
+          </li>
+          <li>
+            <a href=""><i class="fa fa-tasks"></i>Paiements</a>
+          </li>
+          <li>
+            <a href=""><i class="fa fa-envelope"></i>Parametre du site</a>
+          </li>
+          <li>
+            <a href=""><i class="fa fa-envelope"></i>Gestions des contacts</a>
+          </li>
+        {% endif %}
+        <li>
+          <a href=""><i class="fa fa-pen-nib"></i>Profil</a>
+        </li>
+        {% if app.user.fonction == 'CLIENT' %}
+          <li>
+            <a href=""><i class="fa fa-unlock-alt"></i>Mes commandes</a>
+          </li>
+        {% endif %}
+
+        {% if app.user.fonction == 'FOURNISSEUR' %}
+          <li>
+            <a href=""><i class="fa fa-unlock-alt"></i>Gestions des services</a>
+          </li>
+          <li>
+            <a href=""><i class="fa fa-unlock-alt"></i>Mes documents</a>
+          </li>
+          <li>
+            <a href=""><i class="fa fa-unlock-alt"></i>Mes clients</a>
+          </li>
+        {% endif %}
+
+        <li>
+          <a href=""><i class="fa fa-unlock-alt"></i>Mes contacts</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

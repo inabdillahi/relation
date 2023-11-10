@@ -1,0 +1,173 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+  Services
+{% endblock %}
+
+{% block body %}
+  <!-- ============================ Page Title Start================================== -->
+  <div class="page-title" style="background:#017efa url(assets/img/page-title.png) no-repeat;">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 col-md-12">
+          <h2 class="text-light">Publier un services</h2>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- ============================ Page Title End ================================== -->
+
+  <div class="container">
+    <div class="row mt-5 mb-5">
+      <div class="col-xl-12 col-lg-12 col-md-12">
+        <div class="dashboard-body">
+          <div class="dashboard-wraper">
+            <div class="row">
+              <!-- Submit Form -->
+              <div class="col-lg-12 col-md-12">
+                <div class="submit-page">
+                  <!-- Basic Information -->
+                  <div class="frm_submit_block">
+                    <h3>Crée un service</h3>
+                    <div class="frm_submit_wrap">
+                      <div class="row">
+                        <div class="form-group col-md-12">
+                          <label>Titre du service</label>
+                          <input type="text" class="form-control" />
+                        </div>
+
+                        <div class="form-group col-md-6">
+                          <label>Status</label>
+                          <select id="status" class="form-control">
+                            <option value="1">Disponible</option>
+                            <option value="2">Non disponible</option>
+                          </select>
+                        </div>
+
+                        <div class="form-group col-md-6">
+                          <label>Prix du service</label>
+                          <input type="text" class="form-control" placeholder="FDJ" />
+                        </div>
+
+                        <div class="form-group col-md-6">
+                          <label>Ville de départ</label>
+                          <input type="text" class="form-control" />
+                        </div>
+
+                        <div class="form-group col-md-6">
+                          <label>Ville d'arriver</label>
+                          <input type="text" class="form-control" />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="frm_submit_block">
+                    <h3>Information du camion</h3>
+                    <div class="frm_submit_wrap">
+                      <div class="row">
+                        <div class="form-group col-md-6">
+                          <label>Photo du camion</label>
+                          <input type="file" class="form-control" />
+                        </div>
+
+                        <div class="form-group col-md-6">
+                          <label>Nombre de Place</label>
+                          <select class="form-control">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                          </select>
+                        </div>
+
+                        <div class="form-group col-md-4">
+                          <label>Marque du camion</label>
+                          <input type="text" class="form-control" />
+                        </div>
+
+                        <div class="form-group col-md-4">
+                          <label>Models</label>
+                          <input type="text" class="form-control" />
+                        </div>
+
+                        <div class="form-group col-md-4">
+                          <label>Année de sortis</label>
+                          <input type="text" class="form-control" />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Location -->
+                  <div class="frm_submit_block">
+                    <h3>Information du fournisseurs</h3>
+                    <div class="frm_submit_wrap">
+                      <div class="row">
+                        <div class="form-group col-md-6">
+                          <label>Nom</label>
+                          <input type="text" class="form-control" placeholder="Mohamed Abdillahi Nour" disabled />
+                        </div>
+
+                        <div class="form-group col-md-6">
+                          <label>Email</label>
+                          <input type="text" class="form-control" placeholder="mohamed@gmail.com" disabled />
+                        </div>
+
+                        <div class="form-group col-md-6">
+                          <label>Address</label>
+                          <input type="text" class="form-control" placeholder="Djibouti" disabled />
+                        </div>
+
+                        <div class="form-group col-md-6">
+                          <label>Téléphone 1</label>
+                          <input type="text" class="form-control" placeholder="+25377369958" disabled />
+                        </div>
+
+                        <div class="form-group col-md-6">
+                          <label>Téléphone 2</label>
+                          <input type="text" class="form-control" placeholder="+25377369958" disabled />
+                        </div>
+
+                        <div class="form-group col-md-6">
+                          <label>Code Postal</label>
+                          <input type="text" class="form-control" placeholder="1017" disabled />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Detailed Information -->
+                  <div class="frm_submit_block">
+                    <h3>Autre Detail du service</h3>
+                    <div class="frm_submit_wrap">
+                      <div class="row">
+                        <div class="form-group col-md-12">
+                          <label>Description (facultatifs)</label>
+                          <textarea class="form-control h-120"></textarea>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="form-group col-lg-12 col-md-12">
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="checkbox" id="gdpr" />
+                      <label class="form-check-label" for="gdpr">Je suis conscient du fraude et le penalité qui va avec.....</label>
+                    </div>
+                  </div>
+
+                  <div class="form-group col-lg-12 col-md-12">
+                    <button class="btn btn-success" type="submit">Soumettre et Payé</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- row -->
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

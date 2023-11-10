@@ -1,0 +1,113 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+  Tableau de bord
+{% endblock %}
+
+{% block body %}
+  <!-- ============================ Page Title Start================================== -->
+  <div class="page-title" style="background:#017efa url({{ asset('assets/img/page-title.png') }}) no-repeat;">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 col-md-12">
+          <h2 class="text-light">Gestions des clients</h2>
+        </div>
+       
+      </div>
+    </div>
+  </div>
+  <!-- ============================ Page Title End ================================== -->
+
+  <!-- ============================ User Dashboard ================================== -->
+  <section class="gray-simple pt-5 pb-5">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-xl-3 col-lg-3 col-md-12">
+          {% include 'tableau/_menutableau.html.twig' %}
+        </div>
+
+        <div class="col-xl-9 col-lg-9 col-md-12">
+          <div class="dashboard-body">
+            <div class="row">
+              <div class="col-xl-12 col-lg-12 col-md-12">
+                <div class="card">
+                  <div class="card-header d-flex justify-content-between">
+                    <h3 class="mb-0">Liste des clients</h3>
+                    <a href="{{ path('ajouter-client') }}" class="btn btn-sm btn-primary"><i class="fas fa-plus mx-1"></i>Ajouter un client</a>
+                  </div>
+                  {% for message in app.flashes('success') %}
+                    <div class="alert alert-success alert-dismissible fade show my-3">
+                      {{ message }}
+                      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                  {% endfor %}
+
+                  <div class="card-body p-0">
+                    <div class="mx-5 mt-3">{{ form_start(form) }}
+                      {{ form_widget(form) }}
+                      {{ form_end(form) }}</div>
+                    <div class="table-responsive">
+                      <table class="table table-lg">
+                        <thead>
+                          <tr class="text-center">
+                            <th># Identifiant</th>
+                            <th>Nom du clients</th>
+                            <th>Tél 1</th>
+                            <th>Email</th>
+                            <th>Status</th>
+                            <th>Action</th>
+                          </tr>
+                        </thead>
+
+                        <tbody>
+                          {% if users %}
+                            {% for user in users %}
+                              <tr class="text-center align-middle">
+                                <td>
+                                  <a href="{{ path('voir-client', { id: user.id }) }}" class="text-secondary">{{ user.identifiant }}</a>
+                                </td>
+                                <td class="prt-fgi">{{ user.nom }}</td>
+                                <td>{{ user.phone1 }}</td>
+                                <td>
+                                  <ul>
+                                    <li class="text-danger">{{ user.email }}</li>
+                                  </ul>
+                                </td>
+
+                                <td>
+                                  <div class="d-inline-flex label text-success bg-light-success">Validé</div>
+                                </td>
+                                <td>
+                                  <div class="_leads_action d-flex">
+                                    <a href="" class="btn btn-sm btn-warning text-light border-none"><i class="fas fa-edit"></i></a>
+                                    <form onsubmit="return confirm('Confirmer la suppression du client numeros {{ user.identifiant }} ?')" method="post" action="{{ path('supprimer-client', { id: user.id }) }}">
+                                      <input type="hidden" name="_token" value="{{ csrf_token('SUP' ~ user.id) }}" />
+                                      <button type="submit" class="btn btn-sm btn-danger text-light border-none p-2 mt-1"><i class="fas fa-trash"></i></button>
+                                    </form>
+                                  </div>
+                                </td>
+                              </tr>
+                            {% endfor %}
+                          {% else %}
+                            <tr>
+                              <td colspan="6">
+                                <p class="text-danger">Il n'ya pas des clients enregistrer</p>
+                              </td>
+                            </tr>
+                          {% endif %}
+                        </tbody>
+                      </table>
+                      <div class="navigation mt-5">{{ knp_pagination_render(users) }}</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- row -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ============================ User Dashboard End ================================== -->
+{% endblock %}

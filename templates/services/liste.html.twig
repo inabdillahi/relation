@@ -1,0 +1,865 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+  Liste des services
+{% endblock %}
+
+{% block body %}
+  <!-- ============================ Page Title Start================================== -->
+  <div class="page-title" style="background:#017efa url({{ asset('assets/img/page-title.png') }}) no-repeat;">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 col-md-12">
+          <h2 class="text-light">Liste des services</h2>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- ============================ Page Title End ================================== -->
+
+  <!-- ============================ All Property ================================== -->
+  <section class="over-top micler gray-simple">
+    <div class="container">
+      <div class="row">
+        <!-- property Sidebar -->
+        <div class="col-lg-4 col-md-12 col-sm-12">
+          <div class="page-sidebar p-0">
+            <a class="filter_links" data-bs-toggle="collapse" href="#fltbox" role="button" aria-expanded="false" aria-controls="fltbox">Rechercher un service<i class="fa fa-sliders-h ml-2"></i></a>
+            <div class="collapse" id="fltbox">
+              <!-- Find New Property -->
+              <div class="sidebar-widgets p-4">
+                <div class="form-group">
+                  <input type="text" class="form-control" placeholder="Ville depart" />
+                </div>
+
+                <div class="form-group">
+                  <input type="text" class="form-control" placeholder="Ville d'arriver" />
+                </div>
+
+                <div class="form-group">
+                  <select id="city" class="select-normal">
+                    <option value="0">Choix du Pays</option>
+                    <option value="1">Djibouti</option>
+                    <option value="2">Ethiopie</option>
+                  </select>
+                </div>
+
+                <div class="row">
+                  <div class="col-lg-12 col-md-12 col-sm-12 pt-4">
+                    <button class="btn btn-secondary rounded full-width font--medium">Rechercher</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Sidebar End -->
+        </div>
+
+        <div class="col-lg-8 col-md-12 col-sm-12">
+          <div class="row justify-content-center mb-5">
+            <div class="col-lg-12 col-md-12">
+              <div class="item-shorting-box">
+                <div class="item-shorting clearfix">
+                  <div class="left-column">
+                    <h4 class="m-0"><span>15</span> Services publier</h4>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Start All List -->
+          <div class="row justify-content-start gx-3 gy-4">
+            <!-- Single Property -->
+            <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12">
+              <div class="veshm-list-wraps">
+                <div class="veshm-type fr-sale">
+                  <span>Disponible</span>
+                </div>
+
+                <div class="veshm-list-thumb">
+                  <img src="{{ asset('assets/img/camions/camion1.jpg') }}" alt="" srcset="" />
+                </div>
+                <div class="veshm-list-block">
+                  <div class="veshm-tags trending">
+                    <span><i class="fa-solid fa-meteor"></i>Nouveau</span>
+                  </div>
+                  <div class="veshm-list-head">
+                    <div class="veshm-list-head-caption">
+                      <div class="rlhc-price">
+                        <h4 class="rlhc-price-name theme-cl">105 000 fdj</h4>
+                      </div>
+                      <div class="listing-short-detail-flex">
+                        <h5 class="rlhc-title-name verified"><a href="{{path('voir-service')}}" class="prt-link-detail">Un camion</a></h5>
+                        <div class="rlhc-prt-location">
+                          <img src="assets/img/pin.svg" width="16" class="me-1" alt="" />Débart : Djibouti ville
+                        </div>
+                        <div class="rlhc-prt-location">
+                          <img src="assets/img/pin.svg" width="16" class="me-1" alt="" />Arrivé : Regions Interieurs
+                        </div>
+                      </div>
+                    </div>
+                    <div class="veshm-list-head-flex">
+                      <button class="btn btn-like" type="button"><i class="fa-solid fa-cart-plus"></i></button>
+                    </div>
+                  </div>
+
+                  <div class="veshm-list-footer">
+                    <div class="veshm-list-circls">
+                      <ul>
+                        <li>
+                          <span class="bed-inf"><i class="fa-solid fa-truck-field"></i></span>2 place
+                        </li>
+                        <li>
+                          <span class="bath-inf"><i class="fa-solid fa-mobile-screen-button"></i></span>phone
+                        </li>
+                        <li>
+                          <span class="area-inf"><i class="fa-solid fa-vector-square"></i></span>2200
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- End Single Property -->
+
+            <!-- Single Property -->
+            <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12">
+              <div class="veshm-list-wraps">
+                <div class="veshm-type fr-sale">
+                  <span>Disponible</span>
+                </div>
+
+                <div class="veshm-list-thumb">
+                  <img src="{{ asset('assets/img/camions/camion2.jpeg') }}" alt="" srcset="" />
+                </div>
+                <div class="veshm-list-block">
+                  <div class="veshm-tags trending">
+                    <span><i class="fa-solid fa-meteor"></i>5 ans de travaille</span>
+                  </div>
+                  <div class="veshm-list-head">
+                    <div class="veshm-list-head-caption">
+                      <div class="rlhc-price">
+                        <h4 class="rlhc-price-name theme-cl">80 000 fdj</h4>
+                      </div>
+                      <div class="listing-short-detail-flex">
+                        <h5 class="rlhc-title-name verified"><a href="" class="prt-link-detail">Un camion</a></h5>
+                        <div class="rlhc-prt-location">
+                          <img src="assets/img/pin.svg" width="16" class="me-1" alt="" />Débart : Djibouti ville
+                        </div>
+                        <div class="rlhc-prt-location">
+                          <img src="assets/img/pin.svg" width="16" class="me-1" alt="" />Arrivé : Ethiopie
+                        </div>
+                      </div>
+                    </div>
+                    <div class="veshm-list-head-flex">
+                      <button class="btn btn-like" type="button"><i class="fa-solid fa-cart-plus"></i></button>
+                    </div>
+                  </div>
+
+                  <div class="veshm-list-footer">
+                    <div class="veshm-list-circls">
+                      <ul>
+                        <li>
+                          <span class="bed-inf"><i class="fa-solid fa-truck-field"></i></span>1 place
+                        </li>
+                        <li>
+                          <span class="bath-inf"><i class="fa-solid fa-mobile-screen-button"></i></span>phone
+                        </li>
+                        <li>
+                          <span class="area-inf"><i class="fa-solid fa-vector-square"></i></span>2200
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- End Single Property -->
+
+            <!-- Single Property -->
+            <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12">
+              <div class="veshm-list-wraps">
+                <div class="veshm-type">
+                  <span>Non Disponible</span>
+                </div>
+
+                <div class="veshm-list-thumb">
+                  <img src="{{ asset('assets/img/camions/camion2.jpeg') }}" alt="" srcset="" />
+                </div>
+                <div class="veshm-list-block">
+                  <div class="veshm-list-head">
+                    <div class="veshm-list-head-caption">
+                      <div class="rlhc-price">
+                        <h4 class="rlhc-price-name theme-cl">50 000 fdj</h4>
+                      </div>
+                      <div class="listing-short-detail-flex">
+                        <h5 class="rlhc-title-name verified"><a href="" class="prt-link-detail">Un camion</a></h5>
+                        <div class="rlhc-prt-location">
+                          <img src="assets/img/pin.svg" width="16" class="me-1" alt="" />Débart : Djibouti ville
+                        </div>
+                        <div class="rlhc-prt-location">
+                          <img src="assets/img/pin.svg" width="16" class="me-1" alt="" />Arrivé : Ethiopie
+                        </div>
+                      </div>
+                    </div>
+                    <div class="veshm-list-head-flex">
+                      <button class="btn btn-like" type="button"><i class="fa-solid fa-cart-plus"></i></button>
+                    </div>
+                  </div>
+
+                  <div class="veshm-list-footer">
+                    <div class="veshm-list-circls">
+                      <ul>
+                        <li>
+                          <span class="bed-inf"><i class="fa-solid fa-truck-field"></i></span>0 place
+                        </li>
+                        <li>
+                          <span class="bath-inf"><i class="fa-solid fa-mobile-screen-button"></i></span>phone
+                        </li>
+                        <li>
+                          <span class="area-inf"><i class="fa-solid fa-vector-square"></i></span>2200
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- End Single Property -->
+
+            <!-- Single Property -->
+            <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12">
+              <div class="veshm-list-wraps">
+                <div class="veshm-type fr-sale">
+                  <span>Disponible</span>
+                </div>
+
+                <div class="veshm-list-thumb">
+                  <img src="assets/img/camions/camion1.jpg" alt="" srcset="" />
+                </div>
+                <div class="veshm-list-block">
+                  <div class="veshm-tags trending">
+                    <span><i class="fa-solid fa-meteor"></i>Nouveau</span>
+                  </div>
+                  <div class="veshm-list-head">
+                    <div class="veshm-list-head-caption">
+                      <div class="rlhc-price">
+                        <h4 class="rlhc-price-name theme-cl">105 000 fdj</h4>
+                      </div>
+                      <div class="listing-short-detail-flex">
+                        <h5 class="rlhc-title-name verified"><a href="" class="prt-link-detail">Un camion</a></h5>
+                        <div class="rlhc-prt-location">
+                          <img src="assets/img/pin.svg" width="16" class="me-1" alt="" />Débart : Djibouti ville
+                        </div>
+                        <div class="rlhc-prt-location">
+                          <img src="assets/img/pin.svg" width="16" class="me-1" alt="" />Arrivé : Regions Interieurs
+                        </div>
+                      </div>
+                    </div>
+                    <div class="veshm-list-head-flex">
+                      <button class="btn btn-like" type="button"><i class="fa-solid fa-cart-plus"></i></button>
+                    </div>
+                  </div>
+
+                  <div class="veshm-list-footer">
+                    <div class="veshm-list-circls">
+                      <ul>
+                        <li>
+                          <span class="bed-inf"><i class="fa-solid fa-truck-field"></i></span>2 place
+                        </li>
+                        <li>
+                          <span class="bath-inf"><i class="fa-solid fa-mobile-screen-button"></i></span>phone
+                        </li>
+                        <li>
+                          <span class="area-inf"><i class="fa-solid fa-vector-square"></i></span>2200
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- End Single Property -->
+
+            <!-- Single Property -->
+            <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12">
+              <div class="veshm-list-wraps">
+                <div class="veshm-type fr-sale">
+                  <span>Disponible</span>
+                </div>
+
+                <div class="veshm-list-thumb">
+                  <img src="assets/img/camions/camion1.jpg" alt="" srcset="" />
+                </div>
+                <div class="veshm-list-block">
+                  <div class="veshm-tags trending">
+                    <span><i class="fa-solid fa-meteor"></i>Nouveau</span>
+                  </div>
+                  <div class="veshm-list-head">
+                    <div class="veshm-list-head-caption">
+                      <div class="rlhc-price">
+                        <h4 class="rlhc-price-name theme-cl">105 000 fdj</h4>
+                      </div>
+                      <div class="listing-short-detail-flex">
+                        <h5 class="rlhc-title-name verified"><a href="" class="prt-link-detail">Un camion</a></h5>
+                        <div class="rlhc-prt-location">
+                          <img src="assets/img/pin.svg" width="16" class="me-1" alt="" />Débart : Djibouti ville
+                        </div>
+                        <div class="rlhc-prt-location">
+                          <img src="assets/img/pin.svg" width="16" class="me-1" alt="" />Arrivé : Regions Interieurs
+                        </div>
+                      </div>
+                    </div>
+                    <div class="veshm-list-head-flex">
+                      <button class="btn btn-like" type="button"><i class="fa-solid fa-cart-plus"></i></button>
+                    </div>
+                  </div>
+
+                  <div class="veshm-list-footer">
+                    <div class="veshm-list-circls">
+                      <ul>
+                        <li>
+                          <span class="bed-inf"><i class="fa-solid fa-truck-field"></i></span>2 place
+                        </li>
+                        <li>
+                          <span class="bath-inf"><i class="fa-solid fa-mobile-screen-button"></i></span>phone
+                        </li>
+                        <li>
+                          <span class="area-inf"><i class="fa-solid fa-vector-square"></i></span>2200
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- End Single Property -->
+
+            <!-- Single Property -->
+            <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12">
+              <div class="veshm-list-wraps">
+                <div class="veshm-type fr-sale">
+                  <span>Disponible</span>
+                </div>
+
+                <div class="veshm-list-thumb">
+                  <img src="assets/img/camions/camion1.jpg" alt="" srcset="" />
+                </div>
+                <div class="veshm-list-block">
+                  <div class="veshm-tags trending">
+                    <span><i class="fa-solid fa-meteor"></i>Nouveau</span>
+                  </div>
+                  <div class="veshm-list-head">
+                    <div class="veshm-list-head-caption">
+                      <div class="rlhc-price">
+                        <h4 class="rlhc-price-name theme-cl">105 000 fdj</h4>
+                      </div>
+                      <div class="listing-short-detail-flex">
+                        <h5 class="rlhc-title-name verified"><a href="" class="prt-link-detail">Un camion</a></h5>
+                        <div class="rlhc-prt-location">
+                          <img src="assets/img/pin.svg" width="16" class="me-1" alt="" />Débart : Djibouti ville
+                        </div>
+                        <div class="rlhc-prt-location">
+                          <img src="assets/img/pin.svg" width="16" class="me-1" alt="" />Arrivé : Regions Interieurs
+                        </div>
+                      </div>
+                    </div>
+                    <div class="veshm-list-head-flex">
+                      <button class="btn btn-like" type="button"><i class="fa-solid fa-cart-plus"></i></button>
+                    </div>
+                  </div>
+
+                  <div class="veshm-list-footer">
+                    <div class="veshm-list-circls">
+                      <ul>
+                        <li>
+                          <span class="bed-inf"><i class="fa-solid fa-truck-field"></i></span>2 place
+                        </li>
+                        <li>
+                          <span class="bath-inf"><i class="fa-solid fa-mobile-screen-button"></i></span>phone
+                        </li>
+                        <li>
+                          <span class="area-inf"><i class="fa-solid fa-vector-square"></i></span>2200
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- End Single Property -->
+
+            <!-- Single Property -->
+            <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12">
+              <div class="veshm-list-wraps">
+                <div class="veshm-type fr-sale">
+                  <span>Disponible</span>
+                </div>
+
+                <div class="veshm-list-thumb">
+                  <img src="assets/img/camions/camion1.jpg" alt="" srcset="" />
+                </div>
+                <div class="veshm-list-block">
+                  <div class="veshm-tags trending">
+                    <span><i class="fa-solid fa-meteor"></i>Nouveau</span>
+                  </div>
+                  <div class="veshm-list-head">
+                    <div class="veshm-list-head-caption">
+                      <div class="rlhc-price">
+                        <h4 class="rlhc-price-name theme-cl">105 000 fdj</h4>
+                      </div>
+                      <div class="listing-short-detail-flex">
+                        <h5 class="rlhc-title-name verified"><a href="" class="prt-link-detail">Un camion</a></h5>
+                        <div class="rlhc-prt-location">
+                          <img src="assets/img/pin.svg" width="16" class="me-1" alt="" />Débart : Djibouti ville
+                        </div>
+                        <div class="rlhc-prt-location">
+                          <img src="assets/img/pin.svg" width="16" class="me-1" alt="" />Arrivé : Regions Interieurs
+                        </div>
+                      </div>
+                    </div>
+                    <div class="veshm-list-head-flex">
+                      <button class="btn btn-like" type="button"><i class="fa-solid fa-cart-plus"></i></button>
+                    </div>
+                  </div>
+
+                  <div class="veshm-list-footer">
+                    <div class="veshm-list-circls">
+                      <ul>
+                        <li>
+                          <span class="bed-inf"><i class="fa-solid fa-truck-field"></i></span>2 place
+                        </li>
+                        <li>
+                          <span class="bath-inf"><i class="fa-solid fa-mobile-screen-button"></i></span>phone
+                        </li>
+                        <li>
+                          <span class="area-inf"><i class="fa-solid fa-vector-square"></i></span>2200
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- End Single Property -->
+
+            <!-- Single Property -->
+            <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12">
+              <div class="veshm-list-wraps">
+                <div class="veshm-type fr-sale">
+                  <span>Disponible</span>
+                </div>
+
+                <div class="veshm-list-thumb">
+                  <img src="assets/img/camions/camion1.jpg" alt="" srcset="" />
+                </div>
+                <div class="veshm-list-block">
+                  <div class="veshm-tags trending">
+                    <span><i class="fa-solid fa-meteor"></i>Nouveau</span>
+                  </div>
+                  <div class="veshm-list-head">
+                    <div class="veshm-list-head-caption">
+                      <div class="rlhc-price">
+                        <h4 class="rlhc-price-name theme-cl">105 000 fdj</h4>
+                      </div>
+                      <div class="listing-short-detail-flex">
+                        <h5 class="rlhc-title-name verified"><a href="" class="prt-link-detail">Un camion</a></h5>
+                        <div class="rlhc-prt-location">
+                          <img src="assets/img/pin.svg" width="16" class="me-1" alt="" />Débart : Djibouti ville
+                        </div>
+                        <div class="rlhc-prt-location">
+                          <img src="assets/img/pin.svg" width="16" class="me-1" alt="" />Arrivé : Regions Interieurs
+                        </div>
+                      </div>
+                    </div>
+                    <div class="veshm-list-head-flex">
+                      <button class="btn btn-like" type="button"><i class="fa-solid fa-cart-plus"></i></button>
+                    </div>
+                  </div>
+
+                  <div class="veshm-list-footer">
+                    <div class="veshm-list-circls">
+                      <ul>
+                        <li>
+                          <span class="bed-inf"><i class="fa-solid fa-truck-field"></i></span>2 place
+                        </li>
+                        <li>
+                          <span class="bath-inf"><i class="fa-solid fa-mobile-screen-button"></i></span>phone
+                        </li>
+                        <li>
+                          <span class="area-inf"><i class="fa-solid fa-vector-square"></i></span>2200
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- End Single Property -->
+
+            <!-- Single Property -->
+            <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12">
+              <div class="veshm-list-wraps">
+                <div class="veshm-type fr-sale">
+                  <span>Disponible</span>
+                </div>
+
+                <div class="veshm-list-thumb">
+                  <img src="assets/img/camions/camion1.jpg" alt="" srcset="" />
+                </div>
+                <div class="veshm-list-block">
+                  <div class="veshm-tags trending">
+                    <span><i class="fa-solid fa-meteor"></i>Nouveau</span>
+                  </div>
+                  <div class="veshm-list-head">
+                    <div class="veshm-list-head-caption">
+                      <div class="rlhc-price">
+                        <h4 class="rlhc-price-name theme-cl">105 000 fdj</h4>
+                      </div>
+                      <div class="listing-short-detail-flex">
+                        <h5 class="rlhc-title-name verified"><a href="" class="prt-link-detail">Un camion</a></h5>
+                        <div class="rlhc-prt-location">
+                          <img src="assets/img/pin.svg" width="16" class="me-1" alt="" />Débart : Djibouti ville
+                        </div>
+                        <div class="rlhc-prt-location">
+                          <img src="assets/img/pin.svg" width="16" class="me-1" alt="" />Arrivé : Regions Interieurs
+                        </div>
+                      </div>
+                    </div>
+                    <div class="veshm-list-head-flex">
+                      <button class="btn btn-like" type="button"><i class="fa-solid fa-cart-plus"></i></button>
+                    </div>
+                  </div>
+
+                  <div class="veshm-list-footer">
+                    <div class="veshm-list-circls">
+                      <ul>
+                        <li>
+                          <span class="bed-inf"><i class="fa-solid fa-truck-field"></i></span>2 place
+                        </li>
+                        <li>
+                          <span class="bath-inf"><i class="fa-solid fa-mobile-screen-button"></i></span>phone
+                        </li>
+                        <li>
+                          <span class="area-inf"><i class="fa-solid fa-vector-square"></i></span>2200
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- End Single Property -->
+
+            <!-- Single Property -->
+            <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12">
+              <div class="veshm-list-wraps">
+                <div class="veshm-type fr-sale">
+                  <span>Disponible</span>
+                </div>
+
+                <div class="veshm-list-thumb">
+                  <img src="assets/img/camions/camion1.jpg" alt="" srcset="" />
+                </div>
+                <div class="veshm-list-block">
+                  <div class="veshm-tags trending">
+                    <span><i class="fa-solid fa-meteor"></i>Nouveau</span>
+                  </div>
+                  <div class="veshm-list-head">
+                    <div class="veshm-list-head-caption">
+                      <div class="rlhc-price">
+                        <h4 class="rlhc-price-name theme-cl">105 000 fdj</h4>
+                      </div>
+                      <div class="listing-short-detail-flex">
+                        <h5 class="rlhc-title-name verified"><a href="" class="prt-link-detail">Un camion</a></h5>
+                        <div class="rlhc-prt-location">
+                          <img src="assets/img/pin.svg" width="16" class="me-1" alt="" />Débart : Djibouti ville
+                        </div>
+                        <div class="rlhc-prt-location">
+                          <img src="assets/img/pin.svg" width="16" class="me-1" alt="" />Arrivé : Regions Interieurs
+                        </div>
+                      </div>
+                    </div>
+                    <div class="veshm-list-head-flex">
+                      <button class="btn btn-like" type="button"><i class="fa-solid fa-cart-plus"></i></button>
+                    </div>
+                  </div>
+
+                  <div class="veshm-list-footer">
+                    <div class="veshm-list-circls">
+                      <ul>
+                        <li>
+                          <span class="bed-inf"><i class="fa-solid fa-truck-field"></i></span>2 place
+                        </li>
+                        <li>
+                          <span class="bath-inf"><i class="fa-solid fa-mobile-screen-button"></i></span>phone
+                        </li>
+                        <li>
+                          <span class="area-inf"><i class="fa-solid fa-vector-square"></i></span>2200
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- End Single Property -->
+
+            <!-- Single Property -->
+            <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12">
+              <div class="veshm-list-wraps">
+                <div class="veshm-type fr-sale">
+                  <span>Disponible</span>
+                </div>
+
+                <div class="veshm-list-thumb">
+                  <img src="assets/img/camions/camion1.jpg" alt="" srcset="" />
+                </div>
+                <div class="veshm-list-block">
+                  <div class="veshm-tags trending">
+                    <span><i class="fa-solid fa-meteor"></i>Nouveau</span>
+                  </div>
+                  <div class="veshm-list-head">
+                    <div class="veshm-list-head-caption">
+                      <div class="rlhc-price">
+                        <h4 class="rlhc-price-name theme-cl">105 000 fdj</h4>
+                      </div>
+                      <div class="listing-short-detail-flex">
+                        <h5 class="rlhc-title-name verified"><a href="" class="prt-link-detail">Un camion</a></h5>
+                        <div class="rlhc-prt-location">
+                          <img src="assets/img/pin.svg" width="16" class="me-1" alt="" />Débart : Djibouti ville
+                        </div>
+                        <div class="rlhc-prt-location">
+                          <img src="assets/img/pin.svg" width="16" class="me-1" alt="" />Arrivé : Regions Interieurs
+                        </div>
+                      </div>
+                    </div>
+                    <div class="veshm-list-head-flex">
+                      <button class="btn btn-like" type="button"><i class="fa-solid fa-cart-plus"></i></button>
+                    </div>
+                  </div>
+
+                  <div class="veshm-list-footer">
+                    <div class="veshm-list-circls">
+                      <ul>
+                        <li>
+                          <span class="bed-inf"><i class="fa-solid fa-truck-field"></i></span>2 place
+                        </li>
+                        <li>
+                          <span class="bath-inf"><i class="fa-solid fa-mobile-screen-button"></i></span>phone
+                        </li>
+                        <li>
+                          <span class="area-inf"><i class="fa-solid fa-vector-square"></i></span>2200
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- End Single Property -->
+
+            <!-- Single Property -->
+            <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12">
+              <div class="veshm-list-wraps">
+                <div class="veshm-type fr-sale">
+                  <span>Disponible</span>
+                </div>
+
+                <div class="veshm-list-thumb">
+                  <img src="assets/img/camions/camion1.jpg" alt="" srcset="" />
+                </div>
+                <div class="veshm-list-block">
+                  <div class="veshm-tags trending">
+                    <span><i class="fa-solid fa-meteor"></i>Nouveau</span>
+                  </div>
+                  <div class="veshm-list-head">
+                    <div class="veshm-list-head-caption">
+                      <div class="rlhc-price">
+                        <h4 class="rlhc-price-name theme-cl">105 000 fdj</h4>
+                      </div>
+                      <div class="listing-short-detail-flex">
+                        <h5 class="rlhc-title-name verified"><a href="" class="prt-link-detail">Un camion</a></h5>
+                        <div class="rlhc-prt-location">
+                          <img src="assets/img/pin.svg" width="16" class="me-1" alt="" />Débart : Djibouti ville
+                        </div>
+                        <div class="rlhc-prt-location">
+                          <img src="assets/img/pin.svg" width="16" class="me-1" alt="" />Arrivé : Regions Interieurs
+                        </div>
+                      </div>
+                    </div>
+                    <div class="veshm-list-head-flex">
+                      <button class="btn btn-like" type="button"><i class="fa-solid fa-cart-plus"></i></button>
+                    </div>
+                  </div>
+
+                  <div class="veshm-list-footer">
+                    <div class="veshm-list-circls">
+                      <ul>
+                        <li>
+                          <span class="bed-inf"><i class="fa-solid fa-truck-field"></i></span>2 place
+                        </li>
+                        <li>
+                          <span class="bath-inf"><i class="fa-solid fa-mobile-screen-button"></i></span>phone
+                        </li>
+                        <li>
+                          <span class="area-inf"><i class="fa-solid fa-vector-square"></i></span>2200
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- End Single Property -->
+
+            <!-- Single Property -->
+            <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12">
+              <div class="veshm-list-wraps">
+                <div class="veshm-type fr-sale">
+                  <span>Disponible</span>
+                </div>
+
+                <div class="veshm-list-thumb">
+                  <img src="assets/img/camions/camion1.jpg" alt="" srcset="" />
+                </div>
+                <div class="veshm-list-block">
+                  <div class="veshm-tags trending">
+                    <span><i class="fa-solid fa-meteor"></i>Nouveau</span>
+                  </div>
+                  <div class="veshm-list-head">
+                    <div class="veshm-list-head-caption">
+                      <div class="rlhc-price">
+                        <h4 class="rlhc-price-name theme-cl">105 000 fdj</h4>
+                      </div>
+                      <div class="listing-short-detail-flex">
+                        <h5 class="rlhc-title-name verified"><a href="" class="prt-link-detail">Un camion</a></h5>
+                        <div class="rlhc-prt-location">
+                          <img src="assets/img/pin.svg" width="16" class="me-1" alt="" />Débart : Djibouti ville
+                        </div>
+                        <div class="rlhc-prt-location">
+                          <img src="assets/img/pin.svg" width="16" class="me-1" alt="" />Arrivé : Regions Interieurs
+                        </div>
+                      </div>
+                    </div>
+                    <div class="veshm-list-head-flex">
+                      <button class="btn btn-like" type="button"><i class="fa-solid fa-cart-plus"></i></button>
+                    </div>
+                  </div>
+
+                  <div class="veshm-list-footer">
+                    <div class="veshm-list-circls">
+                      <ul>
+                        <li>
+                          <span class="bed-inf"><i class="fa-solid fa-truck-field"></i></span>2 place
+                        </li>
+                        <li>
+                          <span class="bath-inf"><i class="fa-solid fa-mobile-screen-button"></i></span>phone
+                        </li>
+                        <li>
+                          <span class="area-inf"><i class="fa-solid fa-vector-square"></i></span>2200
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- End Single Property -->
+
+            <!-- Single Property -->
+            <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12">
+              <div class="veshm-list-wraps">
+                <div class="veshm-type fr-sale">
+                  <span>Disponible</span>
+                </div>
+
+                <div class="veshm-list-thumb">
+                  <img src="assets/img/camions/camion1.jpg" alt="" srcset="" />
+                </div>
+                <div class="veshm-list-block">
+                  <div class="veshm-tags trending">
+                    <span><i class="fa-solid fa-meteor"></i>Nouveau</span>
+                  </div>
+                  <div class="veshm-list-head">
+                    <div class="veshm-list-head-caption">
+                      <div class="rlhc-price">
+                        <h4 class="rlhc-price-name theme-cl">105 000 fdj</h4>
+                      </div>
+                      <div class="listing-short-detail-flex">
+                        <h5 class="rlhc-title-name verified"><a href="" class="prt-link-detail">Un camion</a></h5>
+                        <div class="rlhc-prt-location">
+                          <img src="assets/img/pin.svg" width="16" class="me-1" alt="" />Débart : Djibouti ville
+                        </div>
+                        <div class="rlhc-prt-location">
+                          <img src="assets/img/pin.svg" width="16" class="me-1" alt="" />Arrivé : Regions Interieurs
+                        </div>
+                      </div>
+                    </div>
+                    <div class="veshm-list-head-flex">
+                      <button class="btn btn-like" type="button"><i class="fa-solid fa-cart-plus"></i></button>
+                    </div>
+                  </div>
+
+                  <div class="veshm-list-footer">
+                    <div class="veshm-list-circls">
+                      <ul>
+                        <li>
+                          <span class="bed-inf"><i class="fa-solid fa-truck-field"></i></span>2 place
+                        </li>
+                        <li>
+                          <span class="bath-inf"><i class="fa-solid fa-mobile-screen-button"></i></span>phone
+                        </li>
+                        <li>
+                          <span class="area-inf"><i class="fa-solid fa-vector-square"></i></span>2200
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- End Single Property -->
+          </div>
+
+          <!-- Pagination -->
+          <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12">
+              <nav aria-label="Page navigation example">
+                <ul class="pagination">
+                  <li class="page-item">
+                    <a class="page-link" href="JavaScript:Void(0);" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a>
+                  </li>
+                  <li class="page-item">
+                    <a class="page-link" href="JavaScript:Void(0);">1</a>
+                  </li>
+                  <li class="page-item">
+                    <a class="page-link" href="JavaScript:Void(0);">2</a>
+                  </li>
+                  <li class="page-item">
+                    <a class="page-link" href="JavaScript:Void(0);">3</a>
+                  </li>
+                  <li class="page-item">
+                    <a class="page-link" href="JavaScript:Void(0);">4</a>
+                  </li>
+                  <li class="page-item">
+                    <a class="page-link" href="JavaScript:Void(0);">5</a>
+                  </li>
+                  <li class="page-item">
+                    <a class="page-link" href="JavaScript:Void(0);">6</a>
+                  </li>
+                  <li class="page-item">
+                    <a class="page-link" href="JavaScript:Void(0);" aria-label="Next"><span aria-hidden="true">&raquo;</span></a>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ============================ All Property ================================== -->
+{% endblock %}

@@ -1,0 +1,126 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+  Inscription
+{% endblock %}
+
+{% block body %}
+  <!-- ============================ Page Title Start================================== -->
+  <div class="page-title" style="background:#017efa url({{ asset('assets/img/page-title.png') }}) no-repeat;">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 col-md-12">
+          <h2 class="text-light">Inscription</h2>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- ============================ Page Title End ================================== -->
+
+  <div class="container">
+    <!-- row Start -->
+    <div class="row form-submit mt-5">
+      <div class="col-lg-2"></div>
+      <div class="col-lg-8 col-md-12 col-sm-12">
+        <!-- row -->
+        <div class="row m-0">
+          <div class="submit-page">
+            <div class="row">
+              <div class="col-lg-12 col-md-12 col-sm-12">
+                <h3>S'inscrire</h3>
+              </div>
+
+              {% for message in app.flashes('success') %}
+                <div class="alert alert-success alert-dismissible fade show my-3">
+                  {{ message }}
+                  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+              {% endfor %}
+
+              {{ form_start(form) }}
+              <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-12">
+                  <div class="form-group">{{ form_row(form.nom) }}</div>
+                </div>
+
+                <div class="col-lg-6 col-md-6 col-sm-12">
+                  <div class="form-group">{{ form_row(form.email) }}</div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12">
+                  <div class="form-group">{{ form_row(form.password) }}</div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-lg-4 col-md-6 col-sm-12">
+                  <div class="form-group">{{ form_row(form.imageFile) }}</div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12">
+                  <div class="form-group">
+                    <label>Sexe</label>
+                    <select id="sexe" name="sexe" class="form-control">
+                      <option value="Masculin">Masculin</option>
+                      <option value="Feminin">Feminin</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12">
+                  <div class="form-group">
+                    <label>Fonction</label>
+                    <select id="fonction" name="fonction" class="form-control">
+                      <option value="FOURNISSEUR">FOURNISSEUR</option>
+                      <option value="CLIENT">CLIENT</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-12">
+                  <div class="form-group">{{ form_row(form.pays) }}</div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-12">
+                  <div class="form-group">{{ form_row(form.codepostale) }}</div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-12">
+                  <div class="form-group">{{ form_row(form.phone1) }}</div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-12">
+                  <div class="form-group">{{ form_row(form.phone2) }}</div>
+                </div>
+              </div>
+
+              <div class="col-lg-6 col-md-6 col-sm-12">
+                <div class="form-group">
+                  <input class="btn btn-success" type="submit" value="Crée un compte" />
+                </div>
+              </div>
+            </div>
+            {{ form_end(form) }}
+          </div>
+        </div>
+        <!-- /row -->
+        <!-- row Start -->
+        <div class="row mt-5">
+          <div class="col-lg-12 col-md-12">
+            <div class="alert alert-success text-center" role="alert">
+              Hello, Avez-vous déjà un compte ? veuillez <a href="{{ path('app_login') }}" class="text-primary">se connecter</a>
+            </div>
+          </div>
+        </div>
+        <!-- /row -->
+      </div>
+
+      <!-- Col-lg 4 -->
+      <div class="col-lg-2 col-md-12 col-sm-12"></div>
+      <!-- /col-lg-4 -->
+    </div>
+    <!-- /row -->
+  </div>
+{% endblock %}

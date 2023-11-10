@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+  Tableau de bord
+{% endblock %}
+
+{% block body %}
+  <!-- ============================ Page Title Start================================== -->
+  <div class="page-title" style="background:#017efa url({{ asset('assets/img/page-title.png') }}) no-repeat;">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 col-md-12">
+          <h2 class="text-light">Client n° {{ client.identifiant }}</h2>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- ============================ Page Title End ================================== -->
+
+  <!-- ============================ User Dashboard ================================== -->
+  <section class="gray-simple pt-5 pb-5">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-xl-3 col-lg-3 col-md-12">
+          {% include 'tableau/_menutableau.html.twig' %}
+        </div>
+
+        <div class="col-xl-9 col-lg-9 col-md-12">
+          <div class="dashboard-body"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ============================ User Dashboard End ================================== -->
+{% endblock %}

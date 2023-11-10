@@ -1,16 +1,234 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
-        {% block stylesheets %}
-        {% endblock %}
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      {% block title %}
 
-        {% block javascripts %}
-        {% endblock %}
-    </head>
-    <body>
-        {% block body %}{% endblock %}
-    </body>
+      {% endblock %}
+    </title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>" />
+
+    <link href="{{ asset('assets/css/styles.css') }}" rel="stylesheet" />
+    {% block stylesheets %}
+
+    {% endblock %}
+
+    {% block javascripts %}
+
+    {% endblock %}
+  </head>
+
+  <body>
+    <div id="main-wrapper">
+      <!-- ============================================================== -->
+      <!-- Top header -->
+      <!-- ============================================================== -->
+      <!-- Start Navigation -->
+      <div class="header <?php if (isset($titre)) : ?>header-transparent<?php endif ?> change-logo">
+        <div class="container">
+          <nav id="navigation" class="navigation navigation-landscape">
+            <div class="nav-header">
+              <a class="nav-brand static-logo" class="mt-3" href="#"><img src="{{ asset('assets/img/millecod1e.png') }}" alt="" srcset="" /></a>
+              <a class="nav-brand fixed-logo" href="#"><img src="{{ asset('assets/img/millecod1e.png') }}" class="logo" alt="" /></a>
+              <div class="nav-toggle"></div>
+              <div class="mobile_nav">
+                <ul>
+                  <li class="list-buttons">
+                    <a href=""><i class="fas fa-plus me-2"></i>Publier</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="nav-menus-wrapper" style="transition-property: none;">
+              <ul class="nav-menu">
+                <li>
+                  <a href="{{ path('home') }}">Accueil</a>
+                </li>
+
+                <li>
+                  <a href="{{ path('services') }}">Les services</a>
+                </li>
+
+                <li>
+                  <a href="JavaScript:Void(0);">Aide<span class="submenu-indicator"></span></a>
+                  <ul class="nav-dropdown nav-submenu">
+                    <li>
+                      <a href="">Support</a>
+                    </li>
+                    <li>
+                      <a href="">Documentation</a>
+                    </li>
+                    <li>
+                      <a href="">FAQ</a>
+                    </li>
+                  </ul>
+                </li>
+
+                <li>
+                  <a href="">Blog</a>
+                </li>
+                {% if app.user %}
+                  <li>
+                    <a href="{{ path('tableau') }}" class="text-success">Mon compte</a>
+                  </li>
+                  <li>
+                    <a href="{{ path('logout') }}" class="text-danger"><i class="fa fa-power-off mx-1"></i> Déconnexion</a>
+                  </li>
+                {% else %}
+                  <li>
+                    <a href="{{ path('app_login') }}">Connection</a>
+                  </li>
+                  <li>
+                    <a href="{{ path('inscription') }}">S'inscrire</a>
+                  </li>
+                {% endif %}
+              </ul>
+
+              <ul class="nav-menu nav-menu-social align-to-right">
+                <li class="list-buttons align-middle">
+                  <a href="{{ path('panier') }}"><i class="fa-solid fa-cart-plus"></i></a>
+                </li>
+                <li class="list-buttons align-middle">
+                  <a href="{{ path('publier') }}"><i class="fas fa-plus me-2"></i>Publier</a>
+                </li>
+              </ul>
+            </div>
+          </nav>
+        </div>
+      </div>
+
+      <div class="clearfix"></div>
+
+      {% block body %}
+
+      {% endblock %}
+
+      <footer class="skin-light-footer bg-light">
+        <div>
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-3 col-md-4">
+                <div class="footer-widget">
+                  <img src="{{ asset('assets/img/millecod1e.png') }}" class="img-footer" alt="" />
+                  <div class="footer-add">
+                    <p>Djibouti, djibouti ville</p>
+                    <p>
+                      <span class="ftp-info"><i class="fa fa-phone" aria-hidden="true"></i>+253 77369958</span>
+                    </p>
+                    <p>
+                      <span class="ftp-info"><i class="fa fa-envelope" aria-hidden="true"></i>mohamed@gmail.com</span>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-2 col-md-4">
+                <div class="footer-widget">
+                  <h4 class="widget-title">Menu</h4>
+                  <ul class="footer-menu">
+                    <li>
+                      <a href="">
+                        <i class="fa-solid fa-arrow-right"></i>
+                        Accueil
+                      </a>
+                    </li>
+                    <li>
+                      <a href="">
+                        <i class="fa-solid fa-arrow-right"></i>
+                        Services
+                      </a>
+                    </li>
+                    <li>
+                      <a href="">
+                        <i class="fa-solid fa-arrow-right"></i>
+                        Aide
+                      </a>
+                    </li>
+                    <li>
+                      <a href="">
+                        <i class="fa-solid fa-arrow-right"></i>
+                        Blog
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="col-lg-2 col-md-4">
+                <div class="footer-widget">
+                  <h4>Nos offres</h4>
+                  <ul class="footer-menu">
+                    <li>
+                      <a href="JavaScript:Void(0);">
+                        <i class="fa-solid fa-arrow-right"></i>
+                        Fournisseurs
+                      </a>
+                    </li>
+                    <li>
+                      <a href="JavaScript:Void(0);">
+                        <i class="fa-solid fa-arrow-right"></i>
+                        Client
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="col-lg-2 col-md-6">
+                <div class="footer-widget">
+                  <h4 class="widget-title">Mon compte</h4>
+                  <ul class="footer-menu">
+                    <li>
+                      <a href="{{ path('app_login') }}">
+                        <i class="fa-solid fa-arrow-right"></i>
+                        Connecté
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="col-lg-3 col-md-6">
+                <div class="footer-widget">
+                  <h4 class="widget-title">Telecharger l'application</h4>
+                  <div class="app-wrap">
+                    <p>
+                      <a href="JavaScript:Void(0);"><img src="{{ asset('assets/img/light-play.png') }}" class="img-fluid" alt="" /></a>
+                    </p>
+                    <p>
+                      <a href="JavaScript:Void(0);"><img src="{{ asset('assets/img/light-ios.png') }}" class="img-fluid" alt="" /></a>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <div class="container">
+            <div class="row align-items-center">
+              <div class="col-lg-12 col-md-12">
+                <p class="mb-0">© 2023 Plateforme de mise en relation.All Rights Reserved</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+    <script src="{{ asset('assets/js/jquery.min.js') }}"></script>
+    <script src="{{ asset('assets/js/popper.min.js') }}"></script>
+    <script src="{{ asset('assets/js/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('assets/js/rangeslider.js') }}"></script>
+    <script src="{{ asset('assets/js/jquery.nice-select.min.js') }}"></script>
+    <script src="{{ asset('assets/js/jquery.magnific-popup.min.js') }}"></script>
+    <script src="{{ asset('assets/js/slick.js') }}"></script>
+    <script src="{{ asset('assets/js/lightbox.js') }}"></script>
+    <script src="{{ asset('assets/js/imagesloaded.js') }}"></script>
+    <script src="{{ asset('assets/js/dropzone.js') }}"></script>
+    <script src="{{ asset('assets/js/datedropper-javascript.js') }}"></script>
+
+    <script src="{{ asset('assets/js/custom.js') }}"></script>
+  </body>
 </html>
